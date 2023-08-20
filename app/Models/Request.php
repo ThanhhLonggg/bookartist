@@ -13,10 +13,6 @@ class Request extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['Firstname', 'Lastname','artists_id','users_id'];
 
-    public function Customer(): BelongsTo
-    {
-        return $this->belongsTo(Customer::class);
-    }
     public function Artist(): BelongsTo
     {
         return $this->belongsTo(Artist::class);
