@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-   
-    
     public function index(){
         $artists = Artist::all(); // Truy vấn dữ liệu từ model Artist
         $actors = Actor::all(); // Truy vấn dữ liệu từ model Actor
