@@ -4,7 +4,7 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-3 col-sm-6">
-                  <h2 class="useful_text">Booking </h2>
+                  <h2 class="useful_text">Useful link </h2>
                   <div class="footer_menu">
                      <ul>
                         <li><a href="{{route('home')}}">Home</a></li>
