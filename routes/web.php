@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\ActorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RequestController;
@@ -22,12 +23,15 @@ Route::get('/register',[LoginController::class, 'index']);
 Route::post('/store',[LoginController::class,'postLogin']);
 Route::post('/register', [LoginController::class, 'store']);
 Route::get('/admin/artist',[ArtistController::class,'index2']);
+Route::get('/admin/actor',[ActorController::class,'index2']);
 Route::get('/admin/request',[RequestController::class,'index']);
 Route::resource('artists', ArtistController::class);
+Route::resource('actors', ActorController::class);
 Route::resource('users', UserController::class);
 Route::resource('requests', RequestController::class);
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/artist', [ArtistController::class, 'index1'])->name('artistlist');
+Route::get('/actor', [ActorController::class, 'index1'])->name('actortlist');
 Route::get('/edit', [UserController::class, 'index'])->name('profile.edit');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::get('/logout', [LoginController::class, 'logout']);

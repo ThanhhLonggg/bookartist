@@ -42,7 +42,7 @@ class RequestController extends Controller
     public function index()
     {
         $requests = ModelsRequest::all();
-        return view('adminRequest', ['requests' => $requests]);
+        return view('adminRequest/adminRequest', ['requests' => $requests]);
     }
     public function destroy($id)
     {

@@ -16,23 +16,23 @@ class ActorController extends Controller
     public function index2()
     {
         $actors = Actor::all();
-        return view('adminactor', ['actors' => $actors]);
+        return view('adminActor/adminActor', ['actors' => $actors]);
     }
 
     public function show(string $id)
     {
         $actor = Actor::find($id);
-        return view('actorDetail', ['actor' => $actor]);
+        return view('adminActor/actorDetail', ['actor' => $actor]);
     }
     public function index1()
     {
         $actors = Actor::all();
-        return view('actor', ['actors' => $actors]);
+        return view('adminActor/actor', ['actors' => $actors]);
     }
     public function edit($id)
     {
         $actor = Actor::find($id);
-        return view('adminEditActor', ['actor' => $actor]);
+        return view('adminActor/adminEditActor', ['actor' => $actor]);
     }
     public function destroy($id)
     {
@@ -76,7 +76,7 @@ class ActorController extends Controller
    }
    public function create()
     {
-        return view('adminAddActor');
+        return view('adminActor/adminAddActor');
     }
  
 }
