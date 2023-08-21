@@ -6,7 +6,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\UserController;
-use App\Http\Middleware\checkLogin;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +32,4 @@ Route::resource('users', UserController::class);
 Route::resource('requests', RequestController::class);
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/artist', [ArtistController::class, 'index1'])->name('artistlist');
+Route::get('/actor', [ActorController::class, 'index1'])->name('actorlist');
