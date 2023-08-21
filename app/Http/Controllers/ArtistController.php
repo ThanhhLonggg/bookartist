@@ -17,30 +17,30 @@ class ArtistController extends Controller
     public function index2()
     {
         $artists = Artist::all();
-        return view('adminArtist', ['artists' => $artists]);
+        return view('adminArtist/adminArtist', ['artists' => $artists]);
     }
 
     public function show(string $id)
     {
         $artist = Artist::find($id);
-        return view('artistDetail', ['artist' => $artist]);
+        return view('adminArtist/artistDetail', ['artist' => $artist]);
     }
 
     public function index1()
     {
         $artists = Artist::all();
-        return view('artist', ['artists' => $artists]);
+        return view('adminArtist/artist', ['artists' => $artists]);
     }
 
     public function create()
     {
-        return view('adminAdd');
+        return view('adminArtist/adminAddArtist');
     }
 
     public function edit($id)
     {
         $artist = Artist::find($id);
-        return view('adminEdit', ['artist' => $artist]);
+        return view('adminArtist/adminEditArtist', ['artist' => $artist]);
     }
 
     public function destroy($id)
@@ -60,7 +60,7 @@ class ArtistController extends Controller
         $artist->Price = $request->Price;
         $artist->Description = $request->Description;
         $artist->save();
-        return redirect('/admin/artist')->with('success', 'artist updated successfully.');
+        return redirect('/admin/artist')->with('success', 'Artist updated successfully.');
     }
 
    public function store(Request $request)
@@ -74,7 +74,7 @@ class ArtistController extends Controller
         ], [
             'required' => 'Vui lòng điền đầy đủ thông tin.',
         ]);
-       $artist = new Artist();
+        $artist = new Artist();
         $artist->FirstName = $request->FirstName;
         $artist->LastName = $request->LastName;
         $artist->BirthDate = $request->BirthDate;
@@ -82,7 +82,7 @@ class ArtistController extends Controller
         $artist->Price = $request->Price;
         $artist->Description = $request->Description;
         $artist->save();
-       return redirect('/admin/artist')->with('success', 'artist created successfully.');
+       return redirect('/admin/artist')->with('success', 'Artist created successfully.');
    }
  
 }

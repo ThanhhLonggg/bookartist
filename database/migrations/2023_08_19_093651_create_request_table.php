@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->String('FirstName');
+            $table->String('LastName');
+            $table->String('Price');
+            $table->foreignId('artists_id')->constrained('artists');
+            $table->foreignId('users_id')->constrained('users');
             $table->timestamps();
         });
     }
