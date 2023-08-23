@@ -89,7 +89,12 @@
           </li>
           <li class="nav-item">
             <a href="{{asset('/admin/request')}}" class="nav-link">
-                Booking Request
+                Booking Artist Request
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{asset('/admin/requestactor')}}" class="nav-link">
+                Booking Actor Request
             </a>
           </li>
         </ul>

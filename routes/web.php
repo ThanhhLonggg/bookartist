@@ -5,6 +5,7 @@ use App\Http\Controllers\ActorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\RequestActorController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -26,10 +27,12 @@ Route::post('/register', [LoginController::class, 'store']);
 Route::get('/admin/artist',[ArtistController::class,'index2']);
 Route::get('/admin/actor',[ActorController::class,'index2']);
 Route::get('/admin/request',[RequestController::class,'index']);
+Route::get('/admin/requestactor',[RequestActorController::class,'index']);
 Route::resource('artists', ArtistController::class);
 Route::resource('actors', ActorController::class);
 Route::resource('users', UserController::class);
 Route::resource('requests', RequestController::class);
+Route::resource('requestactors', RequestActorController::class);
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/artist', [ArtistController::class, 'index1'])->name('artistlist');
 Route::get('/actor', [ActorController::class, 'index1'])->name('actorlist');

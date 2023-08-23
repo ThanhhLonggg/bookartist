@@ -12,7 +12,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Request Artist Management</h3>
+                <h3 class="card-title">Request Actor Management</h3>
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <div class="input-group-append">
@@ -26,7 +26,7 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Artist ID</th>
+                      <th>Actor ID</th>
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>Price</th>
@@ -35,10 +35,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($requests as $request)
+                  @foreach($requestactors as $request)
                    <tr>
                       <td>{{$request -> id}}</td>
-                      <td>{{$request -> artists_id}}</td>
+                      <td>{{$request -> actors_id}}</td>
                       <td>{{$request ->FirstName}}</td>
                       <td>{{$request ->LastName}}</td>
                       <td>{{$request ->Price}}</td>
@@ -48,7 +48,7 @@
                                 @csrf
                                 <button type="submit" class="btn btn-danger" >Accept</button>
                             </form>
-                            <form action="{{ route('requests.destroy', $request->id) }}" method="POST" style="display: inline-block">
+                            <form action="{{ route('requestactors.destroy', $request->id) }}" method="POST" style="display: inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Decline</button>
