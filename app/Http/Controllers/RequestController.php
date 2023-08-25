@@ -6,6 +6,7 @@ use App\Models\Artist;
 use App\Models\Request as ModelsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class RequestController extends Controller
 {
@@ -18,18 +19,23 @@ class RequestController extends Controller
             
             // Lấy thông tin nghệ sĩ từ form
             $artistId = $request->input('artist_id');
-            $artistName = $request->input('artist_FirstName');
-            $artistProduct = $request->input('artist_Product');
-            $artistPrice = $request->input('artist_Price');
             $artist = Artist::find($artistId);
 
             // Thêm thông tin nghệ sĩ vào cơ sở dữ liệu
             $requestModel = new \App\Models\Request(); // Use fully qualified namespace for your custom Request model
             $requestModel->users_id = $user->id; // Thêm id của người dùng đã đăng nhập
             $requestModel->artists_id = $artistId;
-            $requestModel->FirstName = $artistName;
-            $requestModel->Product = $artistProduct;
-            $requestModel->Price = $artistPrice;
+            $requestModel->Name = $artist ->Name;
+            $requestModel->Img = $artist->Img;
+            $requestModel->Price = $artist->Price;
+            // Lấy thời gian hiện tại theo múi giờ UTC
+            $nowUTC = Carbon::now();
+        
+            // Thiết lập múi giờ cho thời gian theo múi giờ Việt Nam (GMT+7)
+            $nowVietnam = $nowUTC->setTimezone('Asia/Ho_Chi_Minh');
+        
+            // Gán thời gian cho trường Time
+            $requestModel->Time = $nowVietnam; // Thêm thời gian thực khi người dùng bấm vào nút Book
             $requestModel->save();
             
             // Chuyển hướng đến trang hiển thị danh sách nghệ sĩ

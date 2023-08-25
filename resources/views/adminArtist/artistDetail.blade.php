@@ -21,9 +21,10 @@
                         <input type="hidden" class="form-control" id="artist_Price" name="artist_Price" value="{{ $artist->Price }}">
                         <p class="about_text">Description: {{ $artist->Description }}</p>
                         <div class="readmore_bt">
-                            <button type="submit" class="button" id="addBtn" style="width: 100%; float: left; font-size: 18px; color: #ffffff; background-color: #7c2c0c; border: 1px solid #b48569; padding: 8px 5px; text-align: center; font-weight: 500;">
-                                Book
-                            </button>
+                           <button type="submit" class="button" id="addBtn" onclick="return confirm('Are you sure you want to submit a request?')" 
+                           style="width: 100%; float: left; font-size: 18px; color: #ffffff; background-color: #7c2c0c; border: 1px solid #b48569; padding: 8px 5px; text-align: center; font-weight: 500;">
+                              Book
+                           </button>
                         </div>
                     </form>
                 </div>
