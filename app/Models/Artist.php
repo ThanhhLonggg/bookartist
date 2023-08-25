@@ -11,7 +11,7 @@ class Artist extends Model
     use HasFactory;
     protected $table = 'artists';
     protected $primaryKey = 'id';
-    protected $fillable = ['Firstname', 'Lastname', 'BirthDate','Img','Price','Description'];
+    protected $fillable = ['Name', 'Product','Sex', 'BirthDate','Img','Price','Description'];
 
     public function Request(): BelongsToMany
     {

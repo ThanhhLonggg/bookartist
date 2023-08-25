@@ -4,16 +4,24 @@
 <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-            <form action="{{ route('artists.update', $artist->id) }}" method="POST">
+            <form action="{{ route('artists.update', $artist->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="FirstName">First Name</label>
-                <input type="text" class="form-control" id="FirstName" name="FirstName" value="{{ $artist->FirstName }}">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" name="Name" value="{{ $artist->Name }}">
             </div>
             <div class="form-group">
-                <label for="LastName">Last Name</label>
-                <input type="text" class="form-control" id="LastName" name="LastName" value="{{ $artist->LastName}}">
+                <label for="Product">Featured music products</label>
+                <input type="text" class="form-control" id="Product" name="Product" value="{{ $artist->Product}}">
+            </div>
+            <div class="form-group">
+                <label for="Sex">Sex</label>
+                <select class="form-control" id="Sex" name="Sex">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="BirthDate">Birth Date</label>
@@ -21,7 +29,8 @@
             </div>
             <div class="form-group">
                 <label for="Img">Image</label>
-                <input type="text" class="form-control" id="Img" name="Img" value="{{ $artist->Img}}">
+                <input type="file" class="form-control-file" id="Img" name="Img">
+                <img style="height: 100px;" src="{{ asset('images/' . $artist->Img) }}" alt="Current Image">
             </div>
             <div class="form-group">
                 <label for="Price">Price</label>
@@ -29,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label for="Description">Description</label>
-                <textarea class="form-control" id="Description" name="Description" rows="3" value="">{{$artist->Description }}</textarea>
+                <textarea class="form-control" id="Description" name="Description" rows="3">{{ $artist->Description }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>

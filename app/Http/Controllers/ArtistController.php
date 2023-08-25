@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ArtistController extends Controller
 {
@@ -53,36 +53,55 @@ class ArtistController extends Controller
     public function update(Request $request, $id)
     {
         $artist = Artist::find($id);
-        $artist->FirstName = $request->FirstName;
-        $artist->LastName = $request->LastName;
+        $artist->Name = $request->Name;
+        $artist->Product = $request->Product;
+        $artist->Sex = $request->Sex;
         $artist->BirthDate = $request->BirthDate;
-        $artist->Img = $request->Img;
+
+        $imageName = 'casi_' . Str::slug($request->Name, '_') . '.' . $request->file('Img')->getClientOriginalExtension();
+        $artist->Img = $imageName;
+
+        $request->file('Img')->move(public_path('images'), $imageName);
+
         $artist->Price = $request->Price;
         $artist->Description = $request->Description;
+
         $artist->save();
         return redirect('/admin/artist')->with('success', 'Artist updated successfully.');
     }
 
-   public function store(Request $request)
-    {       $request->validate([
-            'FirstName' => 'required',
-            'LastName' => 'required',
+    public function store(Request $request)
+    {
+        $request->validate([
+            'Name' => 'required',
+            'Product' => 'required',
+            'Sex' => 'required',
             'BirthDate' => 'required',
-            'Img' => 'required',
+            'Img' => 'required|image|mimes:jpeg,png,jpg,gif',
             'Price' => 'required',
             'Description' => 'required',
         ], [
             'required' => 'Vui lòng điền đầy đủ thông tin.',
+            'image' => 'Tệp phải là hình ảnh.',
+            'mimes' => 'Định dạng hình ảnh không hợp lệ.',
         ]);
+
         $artist = new Artist();
-        $artist->FirstName = $request->FirstName;
-        $artist->LastName = $request->LastName;
+        $artist->Name = $request->Name;
+        $artist->Product = $request->Product;
+        $artist->Sex = $request->Sex;
         $artist->BirthDate = $request->BirthDate;
-        $artist->Img = $request->Img;
+
+        $imageName = 'casi_' . Str::slug($request->Name, '_') . '.' . $request->file('Img')->getClientOriginalExtension();
+        $artist->Img = $imageName;
+
+        $request->file('Img')->move(public_path('images'), $imageName);
+
         $artist->Price = $request->Price;
         $artist->Description = $request->Description;
+
         $artist->save();
-       return redirect('/admin/artist')->with('success', 'Artist created successfully.');
-   }
+        return redirect('/admin/artist')->with('success', 'Artist created successfully.');
+    }
  
 }

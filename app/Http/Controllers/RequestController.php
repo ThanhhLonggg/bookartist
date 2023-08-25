@@ -18,8 +18,8 @@ class RequestController extends Controller
             
             // Lấy thông tin nghệ sĩ từ form
             $artistId = $request->input('artist_id');
-            $artistFisrtName = $request->input('artist_FirstName');
-            $artistLastName = $request->input('artist_LastName');
+            $artistName = $request->input('artist_FirstName');
+            $artistProduct = $request->input('artist_Product');
             $artistPrice = $request->input('artist_Price');
             $artist = Artist::find($artistId);
 
@@ -27,8 +27,8 @@ class RequestController extends Controller
             $requestModel = new \App\Models\Request(); // Use fully qualified namespace for your custom Request model
             $requestModel->users_id = $user->id; // Thêm id của người dùng đã đăng nhập
             $requestModel->artists_id = $artistId;
-            $requestModel->FirstName = $artistFisrtName;
-            $requestModel->LastName = $artistLastName;
+            $requestModel->FirstName = $artistName;
+            $requestModel->Product = $artistProduct;
             $requestModel->Price = $artistPrice;
             $requestModel->save();
             

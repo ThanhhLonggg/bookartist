@@ -28,16 +28,17 @@ class UserController extends Controller
 
 public function update(Request $request, $id)
     {
-                $user = User::find($id);
-                $user->name = $request->input('name');
-                $user->email = $request->input('email');
-                if (!empty($request->input('password'))) {
-                    $user->password = bcrypt($request->input('password'));
-                }
-                $user->save();
-                return redirect('/home')->with('success', 'User updated successfully.');
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        if (!empty($request->input('password'))) {
+            $user->password = bcrypt($request->input('password'));
+        }
+            $user->save();
+        return redirect('/home')->with('success', 'User updated successfully.');
     }
-    public function show($id)
+
+public function show($id)
 {
     $user = User::find($id);
     return view('user', ['user' => $user]);

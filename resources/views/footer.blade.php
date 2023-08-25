@@ -4,7 +4,7 @@
          <div class="container">
             <div class="row">
                <div class="col-lg-3 col-sm-6">
-                  <h2 class="useful_text">Useful link </h2>
+                  <h2 class="useful_text">Booking </h2>
                   <div class="footer_menu">
                      <ul>
                         <li><a href="{{route('home')}}">Home</a></li>
@@ -22,7 +22,7 @@
                <div class="col-lg-3 col-sm-6">
                   <h2 class="useful_text">Social Media</h2>
                   <div id="social">
-                     <a class="facebookBtn smGlobalBtn active" href="#" ></a>
+                     <a class="facebookBtn smGlobalBtn" href="#" ></a>
                      <a class="twitterBtn smGlobalBtn" href="#" ></a>
                      <a class="googleplusBtn smGlobalBtn" href="#" ></a>
                      <a class="linkedinBtn smGlobalBtn" href="#" ></a>

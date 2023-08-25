@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         
-        $user1 = new \App\Models\User(
+        $amdin1 = new \App\Models\User(
             [
                 'name' => 'admin',
                 'email' => 'admin@gmail.com',
@@ -27,9 +27,9 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $user1->password = bcrypt('admin');
-        $user1->save();
-        $user2 = new \App\Models\User(
+        $amdin1->password = bcrypt('admin');
+        $amdin1->save();
+        $user1 = new \App\Models\User(
             [
                 'name' => 'user',
                 'email' => 'user@gmail.com',
@@ -37,8 +37,8 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $user2->password = bcrypt('user');
-        $user2->save();
-
+        $user1->password = bcrypt('user');
+        $user1->save();
+        
     }
 }
