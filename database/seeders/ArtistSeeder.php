@@ -15,14 +15,16 @@ class ArtistSeeder extends Seeder
     public function run()
     {
         // Thêm dữ liệu mẫu vào bảng artists
-        Artist::create([
-            'FirstName' => 'Alice',
-            'LastName' => 'Johnson',
-            'BirthDate' => '1988-05-10',
-            'Img' => 'alice.jpg',
-            'Specialty' => 'Painter',
-            'Description' => 'Talented painter with a unique style',
-        ]);
+        
+        // Artist::create([
+        //     'Name' => 'Beyoncé',
+        //         'Product' => 'Lemonade', // Tên album
+        //         'Sex' => 'Female',
+        //         'BirthDate' => '1981-09-04',
+        //         'Img' => 'beyonce.jpg',
+        //         'Price' => 200,
+        //         'Description' => 'Iconic singer and performer with a powerful voice',
+        // ]);
 
         $artistData = [
             [

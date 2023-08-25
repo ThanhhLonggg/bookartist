@@ -15,14 +15,16 @@ class ActorSeeder extends Seeder
     public function run()
     {
         // Thêm dữ liệu mẫu vào bảng actors
-        Actor::create([
-            'FirstName' => 'John',
-            'LastName' => 'Doe',
-            'BirthDate' => '1990-01-15',
-            'Img' => 'john.jpg',
-            'Price' => 100,
-            'Description' => 'A talented actor with a passion for storytelling',
-        ]);
+        
+        // Actor::create([
+        //     'Name' => 'Leonardo DiCaprio',
+        //         'Product' => 'Inception', // Tên phim
+        //         'Sex' => 'Male',
+        //         'BirthDate' => '1974-11-11',
+        //         'Img' => 'leonardo.jpg',
+        //         'Price' => 150,
+        //         'Description' => 'Award-winning actor known for versatile roles',
+        // ]);
 
         $actorData = [
             [
