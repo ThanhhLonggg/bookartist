@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Artist extends Model
 {
     use HasFactory;
-    protected $t = 'artists';
+    protected $table = 'artists';
     protected $primaryKey = 'id';
     protected $fillable = ['Name', 'Product','Sex', 'BirthDate','Img','Price','Description'];
 
