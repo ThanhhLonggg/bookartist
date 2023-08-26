@@ -18,8 +18,8 @@ class RequestActorController extends Controller
             
             // Lấy thông tin diễn viên từ form
             $actorId = $request->input('actor_id');
-            $actorFisrtName = $request->input('actor_FirstName');
-            $actorLastName = $request->input('actor_LastName');
+            $actorName = $request->input('actor_FirstName');
+            $actorProduct = $request->input('actor_Product');
             $actorPrice = $request->input('actor_Price');
             $actor = Actor::find($actorId);
 
@@ -27,8 +27,8 @@ class RequestActorController extends Controller
             $requestModel = new \App\Models\RequestActor(); // Use fully qualified namespace for your custom RequestActor model
             $requestModel->users_id = $user->id; // Thêm id của người dùng đã đăng nhập
             $requestModel->actors_id = $actorId;
-            $requestModel->FirstName = $actorFisrtName;
-            $requestModel->LastName = $actorLastName;
+            $requestModel->FirstName = $actorName;
+            $requestModel->Product = $actorProduct;
             $requestModel->Price = $actorPrice;
             $requestModel->save();
             

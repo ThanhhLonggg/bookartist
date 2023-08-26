@@ -11,7 +11,7 @@ class Actor extends Model
     use HasFactory;
     protected $table = 'actors';
     protected $primaryKey = 'id';
-    protected $fillable = ['Firstname', 'Lastname', 'BirthDate','Img','Price','Description'];
+    protected $fillable = ['Name', 'Product','Img', 'Sex','BirthDate','Description','Price'];
 
     public function Request(): BelongsToMany
     {

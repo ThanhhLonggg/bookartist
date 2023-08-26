@@ -7,8 +7,13 @@
                   <div class="container">
                      <div class="row">
                         <div class="col-md-6">
+<<<<<<< HEAD
                            <h1 class="banner_taital">Some <br> famous <br>Artists</h1>
                            <p class="banner_text">Here we will make it easier for you to connect with artists</p>
+=======
+                           <h1 class="banner_taital">Hire Celebrities <br> The best <br> Singer, Actor </h1>
+                           <p class="banner_text">Infuse Glamour into Your Event  </p>
+>>>>>>> c54560e31612733f43b5ffd1c33e133675f54b2b
                            <div class="btn_main">
                               <div class="contact_bt"><a href="#">Contact US</a></div>
                            </div>
@@ -23,8 +28,13 @@
                   <div class="container">
                      <div class="row">
                         <div class="col-md-6">
+<<<<<<< HEAD
                            <h1 class="banner_taital">Some <br> famous <br>Actors</h1>
                            <p class="banner_text">Here we will make it easier for you to connect with actors </p>
+=======
+                           <h1 class="banner_taital">Best <br> Singer, Actor <br>in the World</h1>
+                           <p class="banner_text">International Actors and Hollywood Stars </p>
+>>>>>>> c54560e31612733f43b5ffd1c33e133675f54b2b
                            <div class="btn_main">
                               <div class="contact_bt"><a href="#">Contact US</a></div>
                            </div>

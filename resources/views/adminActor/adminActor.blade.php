@@ -2,8 +2,6 @@
 @section('main-content-admin')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="margin-top:50px;">
-
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -24,14 +22,15 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
+              <div class="card-body table-responsive p-0" style="">
                 <table class="table table-head-fixed text-nowrap">
                   <thead>
                     <tr>
                       <th>ID</th>
                       <th>Image</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
+                      <th>Name</th>
+                      <th>List of performances</th>
+                      <th>Sex</th>
                       <th>Birthday</th>
                       <th>Price</th>
                       <th>Description</th>
@@ -39,24 +38,25 @@
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($actors as $actor)
-                   <tr>
-                      <td>{{$actor -> id}}</td>
-                      <td><img style="height:100px" src="{{$actor -> Img}}" alt=""></td>
-                      <td>{{$actor ->FirstName}}</td>
-                      <td>{{$actor ->LastName}}</td>
-                      <td>{{$actor ->BirthDate}}</td>
-                      <td>{{$actor ->Price}}</td>
-                      <td>{{$actor ->Description}}</td>
-                      <td>
-                            <a href="{{ route('actors.edit', $actor->id) }}" class="btn btn-primary">Edit</a>
-                            <form action="{{ route('actors.destroy', $actor->id) }}" method="POST" style="display: inline-block">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
-                            </form>
-                      </td>
-                    </tr>
+                    @foreach($actors as $actor)
+                      <tr>
+                        <td>{{$actor -> id}}</td>
+                        <td><img style="height:300px" src="{{ asset('images/' . $actor->Img) }}" alt=""></td>
+                        <td>{{$actor ->Name}}</td>
+                        <td>{{$actor ->Product}}</td>
+                        <td>{{$actor ->Sex}}</td>
+                        <td>{{$actor ->BirthDate}}</td>
+                        <td>{{$actor ->Price}}</td>
+                        <td>{{$actor ->Description}}</td>
+                        <td>
+                          <a href="{{ route('actors.edit', $actor->id) }}" class="btn btn-primary">Edit</a>
+                          <form action="{{ route('actors.destroy', $actor->id) }}" method="POST" style="display: inline-block">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
+                          </form>
+                        </td>
+                      </tr>
                     @endforeach
                   </tbody>
                 </table>
@@ -66,15 +66,9 @@
             <!-- /.card -->
           </div>
         </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
-
-
-
 @endsection
 @extends('footeradmin')
