@@ -7,8 +7,8 @@
                   <div class="container">
                      <div class="row">
                         <div class="col-md-6">
-                           <h1 class="banner_taital">Long <br> Dep Trai <br>nhat the gioi</h1>
-                           <p class="banner_text">Day la page cua  Long dep trai </p>
+                           <h1 class="banner_taital">Some <br> famous <br>Artists</h1>
+                           <p class="banner_text">Here we will make it easier for you to connect with artists</p>
                            <div class="btn_main">
                               <div class="contact_bt"><a href="#">Contact US</a></div>
                            </div>
@@ -23,8 +23,8 @@
                   <div class="container">
                      <div class="row">
                         <div class="col-md-6">
-                           <h1 class="banner_taital">Best <br> Artists, Actor <br>of Viet Nam</h1>
-                           <p class="banner_text">Cac anh chi co di chu bac hat hay qua </p>
+                           <h1 class="banner_taital">Some <br> famous <br>Actors</h1>
+                           <p class="banner_text">Here we will make it easier for you to connect with actors </p>
                            <div class="btn_main">
                               <div class="contact_bt"><a href="#">Contact US</a></div>
                            </div>
