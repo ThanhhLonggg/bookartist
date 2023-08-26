@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('actors', function (Blueprint $table) {
             $table->id();
-            $table->String('FirstName');
-            $table->String('LastName');
+            $table->String('Name');
+            $table->String('Product');
             $table->String('Img');
+            $table->String('Sex');
             $table->String('BirthDate');
             $table->String('Description');
             $table->String('Price');

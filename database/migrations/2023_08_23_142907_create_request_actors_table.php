@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('requestactors', function (Blueprint $table) {
             $table->id();
-            $table->String('FirstName');
-            $table->String('LastName');
+            $table->String('Name');
+            $table->String('Img');
             $table->String('Price');
             $table->foreignId('actors_id')->constrained('actors');
             $table->foreignId('users_id')->constrained('users');
+            $table ->dateTime('Time');
             $table->timestamps();
         });
     }
