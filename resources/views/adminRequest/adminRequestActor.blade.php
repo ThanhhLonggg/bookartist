@@ -21,7 +21,7 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
+              <div class="card-body table-responsive p-0">
                 <table class="table table-head-fixed text-nowrap">
                   <thead>
                     <tr>
@@ -46,11 +46,12 @@
                       <td>{{$request ->users_id}}</td>
                       <td>{{$request->Time}}</td>
                       <td>
-                        <form action="{{ route('requests.destroy', $request->id) }}" method="POST" style="display: inline-block">
+                        <form action="{{ route('requestactors.destroy', $request->id) }}" method="POST" style="display: inline-block">
                           @csrf
+                          @method('DELETE')
                           <button type="submit" class="btn btn-success"onclick="return confirm('Are you sure you want to accept this request?')">Accept</button>
                         </form>
-                        <form action="{{ route('requests.destroy', $request->id) }}" method="POST" style="display: inline-block">
+                        <form action="{{ route('requestactors.destroy', $request->id) }}" method="POST" style="display: inline-block">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want decline this request?');">Decline</button>

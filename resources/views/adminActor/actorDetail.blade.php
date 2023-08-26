@@ -8,7 +8,7 @@
                     <div class="image_2"><img src="{{ asset('images/' . $actor->Img) }}"></div>
                 </div>
                 <div class="col-md-6">
-                    <form action="{{ route('requests.store') }}" method="post">
+                    <form action="{{ route('requestactors.store') }}" method="post">
                         @csrf
                         <h1 class="about_taital" style="padding-top: 0px;">{{ $actor->Name }} </h1>
                         <input type="hidden" class="form-control" id="actor_Name" name="actor_Name" value="{{ $actor->Name }}">

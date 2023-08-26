@@ -11,7 +11,7 @@ class RequestActor extends Model
     use HasFactory;
     protected $table = 'requestactors';
     protected $primaryKey = 'id';
-    protected $fillable = ['Name', 'Img','Price','artists_id','users_id','Time'];
+    protected $fillable = ['Name', 'Img','Price','actors_id','users_id','Time'];
 
 
     public function Actor(): BelongsTo

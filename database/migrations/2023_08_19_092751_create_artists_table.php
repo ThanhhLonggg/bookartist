@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('artists', function (Blueprint $table) {
-            $table->id();
-            $table->String('Name');
-            $table->String('Product');
-            $table->String('Img');
-            $table->String('Sex');
-            $table->String('BirthDate');
-            $table->String('Description');
-            $table->String('Price');
-            $table->timestamps();
+        Schema::create('artists', function (Blueprint $t) {
+            $t->id();
+            $t->String('Name');
+            $t->String('Product');
+            $t->String('Img');
+            $t->String('Sex');
+            $t->String('BirthDate');
+            $t->String('Description');
+            $t->String('Price');
+            $t->timestamps();
         });
     }
 
