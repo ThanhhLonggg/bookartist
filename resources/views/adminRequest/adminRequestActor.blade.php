@@ -27,10 +27,11 @@
                     <tr>
                       <th>ID</th>
                       <th>Actor ID</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
+                      <th>Actor Name</th>
+                      <th>Img</th>
                       <th>Price</th>
                       <th>User ID</th>
+                      <th>Time</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -39,20 +40,21 @@
                    <tr>
                       <td>{{$request -> id}}</td>
                       <td>{{$request -> actors_id}}</td>
-                      <td>{{$request ->FirstName}}</td>
-                      <td>{{$request ->LastName}}</td>
+                      <td>{{$request ->Name}}</td>
+                      <td><img style="height:300px" src="{{ asset('images/' . $request->Img) }}" alt=""></td>
                       <td>{{$request ->Price}}</td>
                       <td>{{$request ->users_id}}</td>
+                      <td>{{$request->Time}}</td>
                       <td>
-                      <form action="#" method="POST" style="display: inline-block">
-                                @csrf
-                                <button type="submit" class="btn btn-danger" >Accept</button>
-                            </form>
-                            <form action="{{ route('requestactors.destroy', $request->id) }}" method="POST" style="display: inline-block">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Decline</button>
-                            </form>
+                        <form action="{{ route('requests.destroy', $request->id) }}" method="POST" style="display: inline-block">
+                          @csrf
+                          <button type="submit" class="btn btn-success"onclick="return confirm('Are you sure you want to accept this request?')">Accept</button>
+                        </form>
+                        <form action="{{ route('requests.destroy', $request->id) }}" method="POST" style="display: inline-block">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want decline this request?');">Decline</button>
+                        </form>
                       </td>
                     </tr>
                     @endforeach

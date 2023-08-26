@@ -91,7 +91,7 @@ class ArtistController extends Controller
         $artist->Product = $request->Product;
         $artist->Sex = $request->Sex;
         $artist->BirthDate = $request->BirthDate;
-
+        //Str::slug được sử dụng để chuyển một chuỗi thành một chuỗi chuẩn hóa thân thiện cho URL: Loại bỏ các ký tự không phù hợp với URL, Chuyển sang chữ thường
         $imageName = 'casi_' . Str::slug($request->Name, '_') . '.' . $request->file('Img')->getClientOriginalExtension();
         $artist->Img = $imageName;
 
@@ -103,5 +103,13 @@ class ArtistController extends Controller
         $artist->save();
         return redirect('/admin/artist')->with('success', 'Artist created successfully.');
     }
+
+    // public function search(Request $request)
+    // {
+    // $searchTerm = $request->input('search');
+    // $artists = Artist::where('Name', 'like', '%' . $searchTerm . '%')->get();
+
+    // return view('adminArtist/artistSearch', ['artists' => $artists, 'searchTerm' => $searchTerm]);
+    // }
  
 }

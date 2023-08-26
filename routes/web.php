@@ -36,6 +36,7 @@ Route::resource('requestactors', RequestActorController::class);
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/artist', [ArtistController::class, 'index1'])->name('artistlist');
 Route::get('/actor', [ActorController::class, 'index1'])->name('actorlist');
+Route::get('/admin/artist/search', [ArtistController::class, 'search']);
 Route::get('/edit', [UserController::class, 'index'])->name('profile.edit');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::get('/logout', [LoginController::class, 'logout']);

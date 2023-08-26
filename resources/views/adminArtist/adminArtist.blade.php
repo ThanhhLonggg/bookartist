@@ -12,6 +12,10 @@
               <div class="card-header">
                 <h3 class="card-title">Artist Management</h3>
                 <div class="card-tools">
+                  <form action="" method="GET"> <!-- chưa hoàn thiện chức năng search -->
+                    <input type="text" name="search" placeholder="Search by artist name">
+                    <button type="submit">Search</button>
+                  </form>
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <div class="input-group-append">
                     <form action="{{ route('artists.create') }}" method="GET">
