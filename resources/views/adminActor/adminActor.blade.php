@@ -41,7 +41,7 @@
                     @foreach($actors as $actor)
                       <tr>
                         <td>{{$actor -> id}}</td>
-                        <td><img style="height:300px" src="{{ asset('images/' . $actor->Img) }}" alt=""></td>
+                        <td><img style="height:150px" src="{{ asset('images/' . $actor->Img) }}" alt=""></td>
                         <td>{{$actor ->Name}}</td>
                         <td>{{$actor ->Product}}</td>
                         <td>{{$actor ->Sex}}</td>

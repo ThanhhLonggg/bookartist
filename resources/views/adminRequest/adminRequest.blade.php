@@ -46,6 +46,7 @@
                         <td>
                           <form action="{{ route('requests.destroy', $request->id) }}" method="POST" style="display: inline-block">
                             @csrf
+                            @method('DELETE')
                             <button type="submit" class="btn btn-success"onclick="return confirm('Are you sure you want to accept this request?')">Accept</button>
                           </form>
                           <form action="{{ route('requests.destroy', $request->id) }}" method="POST" style="display: inline-block">
